@@ -1,0 +1,158 @@
+{
+  "intents": [
+    {
+      "tag": "pozdrav",
+      "pattern": [
+        "Ahoj",
+        "Dobrý den",
+        "Zdravím",
+        "Nazdar",
+        "Hej"
+      ],
+      "responses": [
+        "Ahoj! Jak vám mohu pomoci?",
+        "Dobrý den, s čím vám mohu pomoci?",
+        "Zdravím vás, jaké máte otázky?",
+        "Nazdar! Co pro vás mohu udělat?"
+      ]
+    },
+    {
+      "tag": "rozlouceni",
+      "pattern": [
+        "Nashledanou",
+        "Čau",
+        "Sbohem",
+        "Měj se",
+        "Tak zatím"
+      ],
+      "responses": [
+        "Mějte se hezky!",
+        "Čau, ať se daří!",
+        "Ahoj, kdybyste něco potřebovali, jsem tu!",
+        "Sbohem, hezký den!"
+      ]
+    },
+    {
+      "tag": "informace_o_pojisteni",
+      "pattern": [
+        "Jaké pojištění nabízíte?",
+        "Jaké máte typy pojištění?",
+        "Co si u vás mohu pojistit?",
+        "Jaké jsou možnosti pojištění?",
+        "Jaké druhy pojištění nabízíte?",
+        "Jaké produkty nabízíte?"
+      ],
+      "responses": [
+        "Nabízíme životní pojištění, zdravotní pojištění, pojištění vozidel, cestovní pojištění a majetkové pojištění.",
+        "Můžete si u nás sjednat například autopojištění, domácí pojištění, úrazové pojištění nebo cestovní pojištění.",
+        "Naše nabídka zahrnuje povinné ručení, havarijní pojištění, zdravotní a životní pojištění, pojištění nemovitostí a další."
+      ]
+    },
+    {
+      "tag": "hlášení_škody",
+      "pattern": [
+        "Jak nahlásím škodu?",
+        "Kde mohu nahlásit škodu?",
+        "Chci nahlásit pojistnou událost",
+        "Měl jsem nehodu, co mám dělat?",
+        "Můj dům byl poškozen, jak to nahlásit?"
+      ],
+      "responses": [
+        "Škodu můžete nahlásit online přes náš formulář nebo na zákaznické lince.",
+        "Pro nahlášení škody můžete využít naši mobilní aplikaci nebo zavolat na naši infolinku.",
+        "Vyplňte prosím hlášení na našem webu v sekci 'Pojistné události' nebo nám zavolejte.",
+        "V případě škody kontaktujte naši infolinku nebo se přihlaste do klientského portálu a vyplňte formulář."
+      ]
+    },
+    {
+      "tag": "platby",
+      "pattern": [
+        "Jak zaplatím pojistné?",
+        "Jak mohu uhradit pojištění?",
+        "Jaké jsou možnosti platby?",
+        "Kdy mám zaplatit pojistné?",
+        "Kolik stojí moje pojistka?"
+      ],
+      "responses": [
+        "Platbu můžete provést bankovním převodem, kartou online nebo inkasem z účtu.",
+        "Pojistné je možné uhradit jednorázově nebo ve splátkách podle smlouvy.",
+        "Veškeré informace o platbě najdete ve svém klientském portálu nebo na faktuře, kterou jsme vám zaslali."
+      ]
+    },
+    {
+      "tag": "kontakt_podpora",
+      "pattern": [
+        "Jak vás mohu kontaktovat?",
+        "Máte telefonní číslo na zákaznickou podporu?",
+        "Kde se nachází vaše pobočky?",
+        "Chci mluvit s operátorem",
+        "Jaké jsou vaše otevírací hodiny?"
+      ],
+      "responses": [
+        "Naše zákaznická podpora je k dispozici na čísle +420 123 456 789, e-mailem na info@pojistovna.cz nebo osobně na našich pobočkách.",
+        "Podporu můžete kontaktovat přes telefon, e-mail nebo chat na našem webu.",
+        "Seznam našich poboček a jejich otevírací dobu najdete na našem webu v sekci 'Kontakty'."
+      ]
+    },
+    {
+      "tag": "bonusy_slevy",
+      "pattern": [
+        "Mám nárok na bonus?",
+        "Jak získám slevu na pojištění?",
+        "Nabízíte věrnostní slevy?",
+        "Jak mohu ušetřit na pojištění?",
+        "Máte nějaké akce?"
+      ],
+      "responses": [
+        "Ano, nabízíme bonusy za bezeškodní průběh a věrnostní slevy.",
+        "Slevu můžete získat například za dlouhodobou spolupráci nebo pojištění více produktů.",
+        "Podívejte se na naše aktuální akce na webu, kde najdete všechny dostupné slevy."
+      ]
+    },
+    {
+      "tag": "změna_smlouvy",
+      "pattern": [
+        "Jak mohu změnit svou smlouvu?",
+        "Chci upravit své pojištění",
+        "Jak změním údaje ve smlouvě?",
+        "Potřebuji změnit pojistnou částku",
+        "Mohu přidat další osoby do pojištění?"
+      ],
+      "responses": [
+        "Změnu smlouvy můžete provést online přes klientský portál nebo osobně na pobočce.",
+        "Úpravy ve smlouvě lze provést po domluvě s naším poradcem na infolince.",
+        "Pokud chcete změnit pojistnou částku nebo přidat osoby do smlouvy, kontaktujte naši podporu."
+      ]
+    },
+    {
+      "tag": "storno_pojisteni",
+      "pattern": [
+        "Jak zruším pojištění?",
+        "Chci ukončit smlouvu",
+        "Jak mohu zrušit pojistku?",
+        "Do kdy mohu zrušit pojištění?",
+        "Mohu zrušit pojištění online?"
+      ],
+      "responses": [
+        "Pojištění můžete zrušit písemnou žádostí nebo přes klientský portál.",
+        "Smlouvu lze vypovědět dle podmínek uvedených v pojistné smlouvě, obvykle s výpovědní lhůtou.",
+        "Pro zrušení pojistky nás kontaktujte nebo pošlete žádost emailem."
+      ]
+    },
+    {
+      "tag": "pojistne_podminky",
+      "pattern": [
+        "Jaké jsou podmínky pojištění?",
+        "Co všechno kryje moje pojištění?",
+        "Jaká je spoluúčast?",
+        "Jaké jsou výluky z pojištění?",
+        "Mohu si přečíst pojistné podmínky?"
+      ],
+      "responses": [
+        "Pojistné podmínky najdete na našem webu nebo ve smlouvě, kterou jste obdrželi.",
+        "Vaše pojištění kryje různé situace v závislosti na typu pojistky, detaily najdete ve smlouvě.",
+        "Výluky a spoluúčast jsou uvedeny v pojistných podmínkách, pokud máte dotazy, rádi vám je vysvětlíme."
+      ]
+    }
+  ]
+}
