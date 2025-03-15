@@ -1,7 +1,7 @@
 import nltk
 import numpy as np
 #nltk.download('punkt_tab')
-
+import json
 #from nltk.stem.porter import PorterStemmer
 from nltk.stem.snowball import SnowballStemmer
 import requests
@@ -80,23 +80,25 @@ def lemmatize_czech_word_api(word):
 
 
 def correct_czech_text_api(text):
-    """Pošle text na Korektor API a vrátí opravenou verzi."""
+    """Pošle text na korektor API a vrátí opravenou verzi."""
     url = "https://lindat.mff.cuni.cz/services/korektor/api/correct"
-    params = {"data": text, "output": "text"}
+    params = {"data": text}
 
     response = requests.post(url, data=params)
 
     if response.status_code == 200:
-        return response.text.strip()  # Korektor vrací opravený text přímo
+        try:
+            data = response.json()  # Převede odpověď na JSON
+            return data.get("result", text).strip()  # Vrátí jen opravený text
+        except json.JSONDecodeError as e:
+            print("Chyba při dekódování JSONu:", e)
+            return text  # Pokud nastane chyba, vrátí původní text
 
     return text  # Pokud API selže, vrátí původní text
 
-
-# Test korekce přes API
-#print(correct_czech_text_api("Překklep."))  # Výstup: "Toto je špatně napsaná věta."
-
-
-
+# Test funkce
+#opraveny_text = correct_czech_text_api("Toto je testovací věta s přeeklepem.")
+#print("Opravený text:", opraveny_text)
 
 
 

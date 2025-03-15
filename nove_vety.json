@@ -1,0 +1,36 @@
+{
+    "intents": [
+        {
+            "tag": "stav",
+            "pattern": [
+                [
+                    "jak",
+                    "se",
+                    "máš",
+                    "?"
+                ]
+            ],
+            "responses": [
+                "Mám se dobře a ty?"
+            ]
+        },
+        {
+            "tag": "vtip",
+            "pattern": [
+                "Řekni vtip"
+            ],
+            "responses": [
+                "Jdou dva a prostřední upad. HAHAHAHA"
+            ]
+        },
+        {
+            "tag": "vtip",
+            "pattern": [
+                "Řekni vtip"
+            ],
+            "responses": [
+                "HAHAHAAH ten byl dobrej"
+            ]
+        }
+    ]
+}
