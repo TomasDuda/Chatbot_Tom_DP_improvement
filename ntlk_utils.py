@@ -74,8 +74,8 @@ def lemmatize_czech_word_api(word):
 
 
 # Test lemmatizace přes API
-print(lemmatize_czech_word_api("překlep"))  # Výstup: "kočka"
-print(lemmatize_czech_word_api("běžela"))  # Výstup: "běžet"
+#print(lemmatize_czech_word_api("překlep"))  # Výstup: "kočka"
+#print(lemmatize_czech_word_api("běžela"))  # Výstup: "běžet"
 
 
 
@@ -93,7 +93,7 @@ def correct_czech_text_api(text):
 
 
 # Test korekce přes API
-print(correct_czech_text_api("Překklep."))  # Výstup: "Toto je špatně napsaná věta."
+#print(correct_czech_text_api("Překklep."))  # Výstup: "Toto je špatně napsaná věta."
 
 
 
