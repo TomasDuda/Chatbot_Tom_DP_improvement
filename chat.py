@@ -4,7 +4,8 @@ import os
 import json
 import torch
 from model import NeuralNet
-from ntlk_utils import bag_of_word, tokenize, correct_czech_text_api
+from ntlk_utils import bag_of_word, tokenize, correct_czech_text_api, lemmatize_czech_word_api
+
 #from train import trenovaci_data, hidden_size
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -47,7 +48,9 @@ while True:
         break
 
     # Pokračovat ve zpracování věty, pokud není exit
-    sentence = correct_czech_text_api(sentence)
+    sentence = lemmatize_czech_word_api(sentence)
+    print(sentence)
+    #sentence = correct_czech_text_api(sentence)
     sentence = tokenize(sentence)
     x = bag_of_word(sentence, all_words)
     x = x.reshape(1, x.shape[0])
@@ -60,7 +63,7 @@ while True:
     probs = torch.softmax(output, dim=1)
     prob = probs[0][predicted.item()]
 
-    if prob.item() > 0.75:
+    if prob.item() > 0.90:
         for intent in trenovaci_data["intents"]:
             if tag == intent["tag"]:
                 print(f"{bot_name}: {random.choice(intent['responses'])}")

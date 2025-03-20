@@ -31,6 +31,15 @@
             "responses": [
                 "HAHAHAAH ten byl dobrej"
             ]
+        },
+        {
+            "tag": "zapomenute_heslo",
+            "pattern": [
+                "zapomněl jsem heslo"
+            ],
+            "responses": [
+                "Heslo si můžete obnovit zde: <odkaz>"
+            ]
         }
     ]
 }

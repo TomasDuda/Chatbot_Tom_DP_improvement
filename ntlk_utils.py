@@ -74,8 +74,8 @@ def lemmatize_czech_word_api(word):
 
 
 # Test lemmatizace přes API
-#print(lemmatize_czech_word_api("překlep"))  # Výstup: "kočka"
-#print(lemmatize_czech_word_api("běžela"))  # Výstup: "běžet"
+print(lemmatize_czech_word_api("koočka"))  # Výstup: "kočka"
+print(lemmatize_czech_word_api("běžela"))  # Výstup: "běžet"
 
 
 
