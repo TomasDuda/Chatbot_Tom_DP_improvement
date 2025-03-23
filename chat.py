@@ -48,9 +48,8 @@ while True:
         break
 
     # Pokračovat ve zpracování věty, pokud není exit
-    sentence = lemmatize_czech_word_api(sentence)
-    print(sentence)
-    #sentence = correct_czech_text_api(sentence)
+    #sentence = lemmatize_czech_word_api(sentence)
+    sentence = correct_czech_text_api(sentence)
     sentence = tokenize(sentence)
     x = bag_of_word(sentence, all_words)
     x = x.reshape(1, x.shape[0])
