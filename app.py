@@ -3,7 +3,7 @@ import random
 import json
 import torch
 from model import NeuralNet
-from ntlk_utils import bag_of_word, tokenize, correct_czech_text_api
+from ntlk_utils import bag_of_word, tokenize, correct_czech_text_api, zobraz_tip
 
 app = Flask(__name__)
 
@@ -27,18 +27,24 @@ model.load_state_dict(model_state)
 model.eval()
 
 bot_name = "Tom"
-
+exit_commands = ["konec", "exit", "quit"]
 
 @app.route("/")
 def home():
     return render_template("index.html")
-
 
 @app.route("/get_response", methods=["POST"])
 def get_response():
     user_input = request.json.get("message")
     if not user_input:
         return jsonify({"response": "Nerozumím. Můžete to zopakovat?"})
+
+    if user_input.strip().lower() in exit_commands:
+        tip = zobraz_tip()
+        return jsonify({
+            "response": "Děkuji za rozhovor, mějte se hezky!",
+            "tip": tip if tip else "Žádný tip tentokrát nemám."
+        })
 
     user_input = correct_czech_text_api(user_input)  # Oprava překlepů
     sentence = tokenize(user_input)
@@ -59,7 +65,6 @@ def get_response():
                 return jsonify({"response": random.choice(intent["responses"])})
     else:
         return jsonify({"response": "S tím by vám nejlépe pomohl můj lidský kolega."})
-
 
 if __name__ == "__main__":
     app.run(debug=True)

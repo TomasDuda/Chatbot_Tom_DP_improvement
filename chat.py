@@ -4,7 +4,7 @@ import os
 import json
 import torch
 from model import NeuralNet
-from ntlk_utils import bag_of_word, tokenize, correct_czech_text_api, lemmatize_czech_word_api
+from ntlk_utils import bag_of_word, tokenize, correct_czech_text_api, lemmatize_czech_word_api, zobraz_tip
 
 #from train import trenovaci_data, hidden_size
 
@@ -43,8 +43,13 @@ while True:
     sentence = input('You:')
 
     # Nejprve zkontrolovat, zda je zadán příkaz pro ukončení
-    if sentence.strip().lower() == "exit":
+    if sentence.strip().lower() in ["konec", "exit", "quit"]:
         print(f"{bot_name}: Děkuji za rozhovor, mějte se hezky!")
+
+        # Zobrazit tip
+        tip = zobraz_tip()
+        if tip:
+            print(f"{bot_name}: Tip: {tip}")
         break
 
     # Pokračovat ve zpracování věty, pokud není exit

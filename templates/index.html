@@ -112,11 +112,23 @@
             })
             .then(response => response.json())
             .then(data => {
+                // Vytvoření a zobrazení zprávy od bota
                 let botMessage = document.createElement("div");
                 botMessage.className = "message bot-message";
                 botMessage.textContent = "Tom: " + data.response;
                 chatBox.appendChild(botMessage);
                 chatBox.scrollTop = chatBox.scrollHeight;
+
+                // Pokud existuje tip a není prázdný, zobraz ho jako další zprávu
+                if (data.tip && data.tip.trim() !== "Žádný tip tentokrát nemám.") {
+                    setTimeout(() => {
+                        let tipMessage = document.createElement("div");
+                        tipMessage.className = "message bot-message";
+                        tipMessage.textContent = "Tip: " + data.tip;
+                        chatBox.appendChild(tipMessage);
+                        chatBox.scrollTop = chatBox.scrollHeight;
+                    }, 1000); // Přidá zpoždění 1 sekundu pro realističtější odpověď
+                }
             })
             .catch(error => console.error("Chyba:", error));
         }

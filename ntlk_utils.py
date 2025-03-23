@@ -5,6 +5,8 @@ import json
 #from nltk.stem.porter import PorterStemmer
 from nltk.stem.snowball import SnowballStemmer
 import requests
+import datetime
+import random
 from spellchecker import SpellChecker
 
 
@@ -74,8 +76,8 @@ def lemmatize_czech_word_api(word):
 
 
 # Test lemmatizace přes API
-print(lemmatize_czech_word_api("koočka"))  # Výstup: "kočka"
-print(lemmatize_czech_word_api("běžela"))  # Výstup: "běžet"
+#print(lemmatize_czech_word_api("koočka"))  # Výstup: "kočka"
+#print(lemmatize_czech_word_api("běžela"))  # Výstup: "běžet"
 
 
 
@@ -100,6 +102,31 @@ def correct_czech_text_api(text):
 #opraveny_text = correct_czech_text_api("Toto je testovací věta s přeeklepem.")
 #print("Opravený text:", opraveny_text)
 
+def zobraz_tip():
+    """Zobrazí tip na základě pravděpodobnosti (25 %) a aktuálního data."""
+    # Načtení tipů
+    with open('tipy.json', 'r', encoding='UTF-8') as f:
+        tipy = json.load(f)
+
+    # Rozhodnutí (25 % šance)
+    #if random.random() > 0.5:
+       # return   # Tip se nezobrazí
+
+    # Získání aktuálního data
+    dnes = datetime.datetime.now().date()
+
+    # Hledání relevantních datumových tipů
+    relevantni_datumove_tipy = [
+        tip for tip in tipy["datumove"]
+        if datetime.datetime.strptime(tip["start_date"], "%Y-%m-%d").date() <= dnes <= datetime.datetime.strptime(tip["end_date"], "%Y-%m-%d").date()
+    ]
+
+    # Pokud existuje datumový tip
+    if relevantni_datumove_tipy and random.random() > 0.5:
+        return random.choice(relevantni_datumove_tipy)["text"]
+
+    # Náhodný tip z ostatních
+    return random.choice(tipy["ostatni"])
 
 
 
