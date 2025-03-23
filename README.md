@@ -1,6 +1,6 @@
 # Klonujte repozitář:
 
-git clone https://github.com/uzivatel/chatbot-tom.git
+git clone https://github.com/TomasDuda/Chatbot_Tom_DP_improvement.git
 
 
 # Nainstalujte požadované balíčky:
