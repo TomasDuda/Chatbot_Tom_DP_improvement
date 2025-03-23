@@ -118,7 +118,7 @@ def zobraz_tip():
     # Hledání relevantních datumových tipů
     relevantni_datumove_tipy = [
         tip for tip in tipy["datumove"]
-        if datetime.datetime.strptime(tip["start_date"], "%Y-%m-%d").date() <= dnes <= datetime.datetime.strptime(tip["end_date"], "%Y-%m-%d").date()
+        if datetime.datetime.strptime(tip["start_date"],"%Y-%m-%d").date() <= dnes <= datetime.datetime.strptime(tip["end_date"], "%Y-%m-%d").date()
     ]
 
     # Pokud existuje datumový tip
