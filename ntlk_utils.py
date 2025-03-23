@@ -109,8 +109,8 @@ def zobraz_tip():
         tipy = json.load(f)
 
     # Rozhodnutí (25 % šance)
-    #if random.random() > 0.5:
-       # return   # Tip se nezobrazí
+    if random.random() > 0.75:
+        return   # Tip se nezobrazí
 
     # Získání aktuálního data
     dnes = datetime.datetime.now().date()
